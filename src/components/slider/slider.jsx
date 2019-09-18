@@ -63,7 +63,7 @@ class Slider extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="overflow-hidden">
+                <div id="home" className="overflow-hidden">
 
                     <div className="slide-container" style={{
                         transform: `translateX(${this.state.translateValue}px)`

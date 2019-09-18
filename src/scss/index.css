@@ -4,6 +4,10 @@ h1, h2, h3 {
   text-transform: capitalize;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Top navigation bar */
 .nav-link {
   color: white;
@@ -46,9 +50,35 @@ h1, h2, h3 {
   padding: 2%;
 }
 
+.left-arrow, .right-arrow {
+  position: absolute;
+  border: 1px solid green;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.left-arrow:hover, .right-arrow:hover {
+  color: grey;
+}
+
+.left-arrow {
+  left: -3%;
+}
+
+.right-arrow {
+  left: 100%;
+}
+
 /* News */
 .news-article {
   cursor: pointer;
+}
+
+/* Sections */
+.border-bottom-4 {
+  border-bottom: 4px solid #dee2e6;
 }
 
 :root {

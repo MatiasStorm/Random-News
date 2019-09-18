@@ -8,7 +8,7 @@ class BreakingNews extends Component {
     }
     render() {
         return (
-            <div className="bg-secondary h-100 overflow-hidden">
+            <div id="breaking-news" className="bg-secondary h-100 overflow-hidden">
                 <Headline title={this.state.title}></Headline>
                 <div className="container">
                     <div className="row justify-content-around">

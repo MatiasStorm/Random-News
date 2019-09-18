@@ -3,23 +3,24 @@ import NewsRow from '../news/newsRow';
 import Headline from '../headline';
 import TextGenerator from '../../utilities/textGenerator';
 
+
 class MostPopular extends Component {
     state = {
         topics: this.getTopics(4)
     }
     render() {
         return (
-            <React.Fragment>
+            <div id="most-popular">
                 <Headline title="Most Popular"></Headline>
-                <div className="container border-bottom">
-                    {this.state.topics.map((title) =>
+                <div className="container border-bottom-4 ">
+                    {this.state.topics.map((topic, index) =>
                         <React.Fragment>
-                            <h1 className="text-weight-bolder"><u>{title + ":"}</u></h1>
-                            <NewsRow></NewsRow>
+                            <h1 className="text-weight-bolder"><u>{topic + ":"}</u></h1>
+                            <NewsRow key={index}></NewsRow>
                         </React.Fragment>
                     )}
                 </div>
-            </React.Fragment>
+            </div>
         );
     }
 

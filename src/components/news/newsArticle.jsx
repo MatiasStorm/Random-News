@@ -5,7 +5,8 @@ import TextGenerator from '../../utilities/textGenerator';
 class NewsArticle extends Component {
     state = {
         headline: TextGenerator.getWords(5),
-        paragraph: TextGenerator.getSentences(3),
+        paragraph: TextGenerator.getSentences(this.props.numberOfSentences),
+        id: this.props.id
     }
     render() {
         return (

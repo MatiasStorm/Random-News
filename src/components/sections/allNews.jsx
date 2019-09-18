@@ -5,7 +5,7 @@ class AllNews extends Component {
     state = {}
     render() {
         return (
-            <div>
+            <div id="all-news">
                 <Headline title="All News"></Headline>
             </div>
         );

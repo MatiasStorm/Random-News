@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import NewsArticle from './newsArticle';
 
 class NewsColumn extends Component {
-    state = {}
+    state = {
+        numberOfSentences: 3
+    }
     render() {
         return (
             this.getArticles()
@@ -12,14 +14,23 @@ class NewsColumn extends Component {
     getArticles() {
         if (Math.random() > 0.5) {
             return (
-                <NewsArticle imageHeight={700} imageWidth={500}></NewsArticle>
+                <NewsArticle
+                    numberOfSentences={this.state.numberOfSentences}
+                    imageHeight={700}
+                    imageWidth={500} />
             );
         }
         else {
             return (
                 <div className="col">
-                    <NewsArticle imageHeight={300} imageWidth={500}></NewsArticle>
-                    <NewsArticle imageHeight={300} imageWidth={500}></NewsArticle>
+                    <NewsArticle
+                        numberOfSentences={this.state.numberOfSentences}
+                        imageHeight={300}
+                        imageWidth={500} />
+                    <NewsArticle
+                        numberOfSentences={this.state.numberOfSentences}
+                        imageHeight={300}
+                        imageWidth={500} />
                 </div>
             );
         }
