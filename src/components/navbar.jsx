@@ -5,8 +5,8 @@ class NavBar extends Component {
     state = {}
     render() {
         return (
-            <nav className="py-0 navbar bg-primary ">
-                <a className="py-0 font-weight-bolder navbar-brand" href="#">RandomNews</a>
+            <nav className="fixed-top pu-0 bg-primary nav">
+                <a className="p-3 navbar-brand font-weight-bolder" href="#">RandomNews</a>
                 <a className="py-3 nav-link font-weight-bold" href="#">Home</a>
                 <a className="py-3 nav-link font-weight-bold" href="#">Breaking News</a>
                 <a className="py-3 nav-link font-weight-bold" href="#">Most Popular</a>
@@ -18,3 +18,5 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+
+// py-0 navbar fixed-top bg-primary

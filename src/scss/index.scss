@@ -22,7 +22,28 @@ $secondary: rgb(199, 164, 11);
 
 
 /* =================================================== */
+/* Carousel */
+.carousel-control-prev, .carousel-control-next{
+    cursor: pointer;
+}
 
+.slide-container{
+    white-space: nowrap;
+    transition: 0.5s ease-in-out;
+    border: 1px solid red;
+}
+
+.slide-text-container{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, 0%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    white-space: normal;
+    text-align: center;
+    padding: 2%;
+}
 
 
 
@@ -38,6 +59,9 @@ $secondary: rgb(199, 164, 11);
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/navbar";
 
+@import "../../node_modules/bootstrap/scss/carousel";
+
+@import "../../node_modules/bootstrap/scss/media";
 
 
 // @import "../../node_modules/bootstrap/scss/type";
@@ -59,14 +83,12 @@ $secondary: rgb(199, 164, 11);
 // @import "../../node_modules/bootstrap/scss/jumbotron";
 // @import "../../node_modules/bootstrap/scss/alert";
 // @import "../../node_modules/bootstrap/scss/progress";
-// @import "../../node_modules/bootstrap/scss/media";
 // @import "../../node_modules/bootstrap/scss/list-group";
 // @import "../../node_modules/bootstrap/scss/close";
 // @import "../../node_modules/bootstrap/scss/toasts";
 // @import "../../node_modules/bootstrap/scss/modal";
 // @import "../../node_modules/bootstrap/scss/tooltip";
 // @import "../../node_modules/bootstrap/scss/popover";
-// @import "../../node_modules/bootstrap/scss/carousel";
 // @import "../../node_modules/bootstrap/scss/spinners";
 // @import "../../node_modules/bootstrap/scss/print";
 
