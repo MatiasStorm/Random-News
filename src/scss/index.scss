@@ -52,6 +52,11 @@ h1, h2, h3{
     padding: 2%;
 }
 
+/* News */
+
+.news-article{
+    cursor: pointer;
+}
 
 
 @import "../../node_modules/bootstrap/scss/functions";
@@ -72,7 +77,7 @@ h1, h2, h3{
 
 @import "../../node_modules/bootstrap/scss/grid";
 
-// @import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/type";
 // @import "../../node_modules/bootstrap/scss/images";
 // @import "../../node_modules/bootstrap/scss/code";
 // @import "../../node_modules/bootstrap/scss/tables";
