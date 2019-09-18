@@ -4,6 +4,14 @@
 /* General Variables */
 $primary: rgb(150,20,20);
 $secondary: rgb(199, 164, 11);
+$danger: red;
+
+/* General */
+h1, h2, h3{
+    text-transform: capitalize;
+}
+
+
 
 /* Top navigation bar */
 .nav-link {
@@ -30,7 +38,6 @@ $secondary: rgb(199, 164, 11);
 .slide-container{
     white-space: nowrap;
     transition: 0.5s ease-in-out;
-    border: 1px solid red;
 }
 
 .slide-text-container{
@@ -63,11 +70,11 @@ $secondary: rgb(199, 164, 11);
 
 @import "../../node_modules/bootstrap/scss/media";
 
+@import "../../node_modules/bootstrap/scss/grid";
 
 // @import "../../node_modules/bootstrap/scss/type";
 // @import "../../node_modules/bootstrap/scss/images";
 // @import "../../node_modules/bootstrap/scss/code";
-// @import "../../node_modules/bootstrap/scss/grid";
 // @import "../../node_modules/bootstrap/scss/tables";
 // @import "../../node_modules/bootstrap/scss/forms";
 // @import "../../node_modules/bootstrap/scss/buttons";

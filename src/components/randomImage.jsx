@@ -10,7 +10,7 @@ class RandomImage extends Component {
     render() {
         return (
             <img
-                className="mw-100 mh-100" src={this.state.imageUrl}
+                className={"mw-100 mh-100 " + this.props.classes} src={this.state.imageUrl}
                 onError={this.newImage}>
             </img>
         );

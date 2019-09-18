@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import RandomImage from '../randomImage';
-import { LoremIpsum } from "lorem-ipsum";
+import TextGenerator from '../../utilities/textGenerator';
 
 class Slide extends Component {
     state = {
-        headline: this.getHeadline(),
-        paragraph: this.getParagraph()
+        headline: TextGenerator.getWords(5),
+        paragraph: TextGenerator.getSentences(5)
     }
 
     render() {
@@ -22,16 +22,6 @@ class Slide extends Component {
                 </span>
             </span>
         );
-    }
-
-    getHeadline() {
-        const lorem = new LoremIpsum()
-        return lorem.generateWords(5);
-    }
-
-    getParagraph() {
-        const lorem = new LoremIpsum()
-        return lorem.generateSentences(5)
     }
 }
 

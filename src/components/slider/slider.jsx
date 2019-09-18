@@ -49,6 +49,7 @@ class Slider extends Component {
 
     componentDidMount() {
         window.addEventListener("resize", this.reRender)
+        setInterval(this.goToNextSlide, 5000);
     }
 
     reRender = () => {
@@ -62,7 +63,7 @@ class Slider extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="overflow-hidden border">
+                <div className="overflow-hidden">
 
                     <div className="slide-container" style={{
                         transform: `translateX(${this.state.translateValue}px)`
