@@ -11,11 +11,11 @@ class MostPopular extends Component {
     render() {
         return (
             <div id="most-popular">
-                <div className="border-bottom-4 container">
+                <div className="border-bottom border-5 container">
                     <Headline title="Most Popular"></Headline>
                     {this.state.topics.map((topic, index) =>
                         <div key={index}>
-                            <h1 className="text-weight-bolder p-3"><u>{topic + ":"}</u></h1>
+                            <h1 className="text-weight-bolder my-3 border-bottom border-3">{topic + ":"}</h1>
                             <NewsRowSlider />
                         </div>
                     )}

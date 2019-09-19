@@ -4,7 +4,7 @@ class Headline extends Component {
     state = {}
     render() {
         return (
-            <h1 className="p-5 mt-2 margin-auto text-center display-4 font-weight-bold"><u>{this.props.title}</u></h1>
+            <h1 className="pt-5 pb-2 margin-auto text-center display-4 font-weight-bold">{this.props.title}</h1>
         );
     }
 }

@@ -5,7 +5,7 @@ class PageNavigation extends Component {
     render() {
         const pageNumbers = this.getPageNumbers();
         return (
-            <div className="btn-group text-center">
+            <div className="btn-group text-center mb-5 mt-1">
                 <button onClick={this.props.previosPage} className="mx-2 btn btn-primary">{"<<"}</button>
 
                 {this.displayLeftDotButton()}

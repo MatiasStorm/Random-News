@@ -86,10 +86,6 @@ html {
 
 /* Most Popular */
 /* Sections */
-.border-bottom-4 {
-  border-bottom: 4px solid #dee2e6;
-}
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -4050,6 +4046,14 @@ a.text-dark:hover, a.text-dark:focus {
 
 .invisible {
   visibility: hidden !important;
+}
+
+.border-3 {
+  border-width: 3px !important;
+}
+
+.border-5 {
+  border-width: 5px !important;
 }
 
 .nav {

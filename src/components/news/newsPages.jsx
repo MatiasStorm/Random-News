@@ -42,8 +42,15 @@ class NewsPages extends Component {
     }
 
     goToPage = (index) => {
+        let pages = [...this.state.pages]
+        for (let i = this.state.currentIndex; i <= index; i++) {
+            if (pages[i] == null) {
+                pages[i] = this.getPage(i);
+            }
+        }
         this.setState({
-            currentIndex: index
+            currentIndex: index,
+            pages: pages
         })
     }
 

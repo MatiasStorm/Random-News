@@ -21,9 +21,9 @@ export const NEWS_COLUMN = {
 // News Pages:
 export const NEWS_PAGES = {
     numberOfPages: 2,
-    numberOfRowsPerPage: 3,
+    numberOfRowsPerPage: 2,
     numberOfArticlesPerRow: 4,
-    numberOfSentences: 1,
+    numberOfSentences: 2,
     numberOfWords: 4,
     imageWidth: 200,
     imageHeight: 100,

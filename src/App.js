@@ -5,7 +5,7 @@ import Slider from "./components/slider/slider.jsx";
 import BreakingNews from './components/sections/breakingNews';
 import MostPopular from './components/sections/mostPopular';
 import AllNews from './components/sections/allNews';
-import Contact from './components/sections/contact';
+import About from './components/sections/about';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <BreakingNews key={3}></BreakingNews>
       <MostPopular key={4}></MostPopular>
       <AllNews key={5}></AllNews>
-      <Contact key={6}></Contact>
+      <About key={6}></About>
     </React.Fragment>
   );
 }
