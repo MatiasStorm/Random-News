@@ -4,7 +4,7 @@ import ImageUrlGenerator from "../utilities/imageUrlGenerator";
 class ArticleService {
     constructor(lorem) {
         this.lorem = lorem;
-        this.maxImageId = 300
+        this.ImageUrlGenerator = new ImageUrlGenerator();
         this.url = "https://picsum.photos/id/"
     }
     getWords(n) {
@@ -15,27 +15,12 @@ class ArticleService {
     }
 
     getImageUrls(n, width, height) {
-        let urls = []
-        for (let i = 0; i < n; i++) {
-            urls.push(this.getImageUrl(width, height));
-        }
-        return urls;
+        return this.ImageUrlGenerator.getUrls(n, width, height)
     }
 
     getImageUrl = (width, height) => {
-        let id = this.randomInt(this.maxImageId);
-        return this.url + id + "/" + width + "/" + height;
+        return this.ImageUrlGenerator.getUrl(width, height)
     }
-
-    setMaxImageId(value) {
-        this.maxImageId = value;
-    }
-
-    randomInt(max) {
-        return Math.floor(Math.random() * max);
-    }
-
-
 }
 
 export default ArticleService;

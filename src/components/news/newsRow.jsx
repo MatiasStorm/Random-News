@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import SliderArrows from '../sections/sliderArrow2';
-import { NEWS_ROW } from "../../settings.js";
-import ArticleService from '../../services/articleService';
-import { LoremIpsum } from 'lorem-ipsum';
 import NewsArticle from './newsArticle';
 
 class NewsRow extends Component {
-    articleService = new ArticleService(new LoremIpsum());
     render() {
         return (
             <div className="article-row-container row" style={this.style}>
