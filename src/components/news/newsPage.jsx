@@ -4,11 +4,10 @@ import NewsRow from './newsRow';
 class NewsPage extends Component {
 
     render() {
-        console.log(this.props.page);
         return (
             <div className="container">
                 {this.props.page.rows.map(row =>
-                    <NewsRow articles={row.articles} key={row.id} />)}
+                    <NewsRow articles={row.articles} key={row.id} imageError={this.props.imageError} />)}
             </div>
         );
     }

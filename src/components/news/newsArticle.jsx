@@ -8,7 +8,8 @@ class NewsArticle extends Component {
             >
                 <img
                     src={this.props.imageUrl}
-                    onError={() => this.props.imageError(this.props.id)} />
+                    onError={() => this.props.imageError(this.props.id)}
+                    alt="" />
                 <div className="">
                     <h3>{this.props.headline}</h3>
                     <p>{this.props.paragraph}</p>

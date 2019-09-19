@@ -62,6 +62,7 @@ html{
     height: 100%;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
+    z-index: 1000;
     &:hover{
         color: grey;
     }
@@ -82,7 +83,8 @@ html{
     cursor: pointer;
     transition: all 0.2s ease-in-out;
     &:hover{
-        opacity: 0.8;
+        background-color: rgba(0, 0, 0, 0.02);
+        transform: scale(1.03);
     }
 }
 
@@ -113,11 +115,14 @@ html{
 @import "../../node_modules/bootstrap/scss/grid";
 
 @import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/buttons";
+
+
+
 // @import "../../node_modules/bootstrap/scss/images";
 // @import "../../node_modules/bootstrap/scss/code";
 // @import "../../node_modules/bootstrap/scss/tables";
 // @import "../../node_modules/bootstrap/scss/forms";
-// @import "../../node_modules/bootstrap/scss/buttons";
 // @import "../../node_modules/bootstrap/scss/transitions";
 // @import "../../node_modules/bootstrap/scss/dropdown";
 // @import "../../node_modules/bootstrap/scss/button-group";

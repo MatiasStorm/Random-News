@@ -14,7 +14,7 @@ function App() {
       <Slider key={2}></Slider>
       <BreakingNews key={3}></BreakingNews>
       <MostPopular key={4}></MostPopular>
-      {/* <AllNews key={5}></AllNews> */}
+      <AllNews key={5}></AllNews>
       <Contact key={6}></Contact>
     </React.Fragment>
   );

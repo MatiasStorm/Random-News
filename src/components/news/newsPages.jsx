@@ -1,69 +1,116 @@
 import React, { Component } from 'react';
 import NewsPage from './newsPage';
 import { NEWS_PAGES } from '../../settings';
-import NewsArticle from './newsArticle';
 import ArticleService from '../../services/articleService';
 import { LoremIpsum } from 'lorem-ipsum';
+import PageNavigation from './pageNavigation';
 
 class NewsPages extends Component {
     articleService = new ArticleService(new LoremIpsum());
     state = {
         pages: this.getPages(),
+        currentIndex: 0,
     }
     render() {
-        console.log(this.state.pages)
+        const { pages, currentIndex } = this.state;
         return (
             <div>
-                {this.state.pages.map(page =>
-                    <NewsPage page={page} key={page.id} />)}
-                {/* Navigation */}
+                <NewsPage page={pages[currentIndex]} imageError={this.newImageUrl} />
+                <PageNavigation currentPage={currentIndex} nextPage={this.nextPage} previosPage={this.previosPage} goToPage={this.goToPage} />
             </div>
         );
     }
 
+    nextPage = () => {
+        const newIndex = this.state.currentIndex + 1
+        let pages = [...this.state.pages];
+        if (pages[newIndex] == null) {
+            pages[newIndex] = this.getPage(newIndex);
+        }
+        this.setState({
+            currentIndex: newIndex,
+            pages: pages
+        })
+    }
 
+    previosPage = () => {
+        if (this.state.currentIndex > 0) {
+            this.setState(oldState => ({
+                currentIndex: oldState.currentIndex - 1
+            }))
+        }
+    }
+
+    goToPage = (index) => {
+        this.setState({
+            currentIndex: index
+        })
+    }
 
     getPages() {
         let pages = []
-        for (let i = 0; i < NEWS_PAGES.numberOfPages; i++) {
-            let page = {
-                id: i,
-                rows: []
-            };
-            for (let j = 0; j < NEWS_PAGES.numberOfRowsPerPage; j++) {
-                let row = {
-                    id: j,
-                    articles: []
-                }
-                for (let k = 0; k < NEWS_PAGES.numberOfArticlesPerRow; k++) {
-                    row.articles.push({
-                        imageUrl: this.articleService.getImageUrl(NEWS_PAGES.imageWidth, NEWS_PAGES.imageHeight),
-                        imageWidth: NEWS_PAGES.imageWidth,
-                        imageHeight: NEWS_PAGES.imageHeight,
-                        headline: this.articleService.getWords(NEWS_PAGES.numberOfWords),
-                        paragraph: this.articleService.getSentences(NEWS_PAGES.numberOfSentences),
-                        imageError: this.newImageUrl,
-                        id: k
-                    })
-                }
-                page.rows.push(row);
-            }
-            pages.push(page);
+        for (let pageId = 0; pageId < NEWS_PAGES.numberOfPages; pageId++) {
+            pages.push(this.getPage(pageId));
         }
         return pages;
     }
 
-    newImageUrl(id) {
-        console.log("Error")
-        // let article = this.state.articles.filter((a) => a.id === id)[0];
-        // const url = this.articleService.getImageUrl(article.imageWidth, article.imageHeight);
-        // article.imageUrl = url;
-        // const articles = [...this.state.articles];
-        // const index = articles.indexOf(article);
-        // articles[index] = article;
-        // this.setState({
-        //     articles: articles
-        // })
+    getPage(pageId) {
+        let page = {
+            id: pageId,
+            rows: []
+        };
+        for (let rowId = 0; rowId < NEWS_PAGES.numberOfRowsPerPage; rowId++) {
+            page.rows.push(this.getRow(pageId, rowId));
+        }
+        return page;
+    }
+
+    getRow(pageId, rowId) {
+        let row = {
+            id: rowId,
+            articles: []
+        }
+        for (let articleId = 0; articleId < NEWS_PAGES.numberOfArticlesPerRow; articleId++) {
+            row.articles.push(this.getArticle(pageId, rowId, articleId))
+        }
+        return row;
+    }
+
+    getArticle(pageId, rowId, articleId) {
+        return ({
+            imageUrl: this.articleService.getImageUrl(NEWS_PAGES.imageWidth, NEWS_PAGES.imageHeight),
+            imageWidth: NEWS_PAGES.imageWidth,
+            imageHeight: NEWS_PAGES.imageHeight,
+            headline: this.articleService.getWords(NEWS_PAGES.numberOfWords),
+            paragraph: this.articleService.getSentences(NEWS_PAGES.numberOfSentences),
+            id: {
+                pageId: pageId,
+                rowId: rowId,
+                articleId: articleId
+            }
+        });
+    }
+
+    newImageUrl = (id) => {
+        let pages = [...this.state.pages];
+
+        const page = pages.filter(p => p.id === id.pageId)[0];
+        const pageIndex = pages.indexOf(page);
+
+        const row = page.rows.filter(r => r.id === id.rowId)[0]
+        const rowIndex = page.rows.indexOf(row)
+
+        let article = row.articles.filter(a => a.id.articleId === id.articleId)[0];
+        const articleIndex = row.articles.indexOf(article);
+
+        article.imageUrl = this.articleService.getImageUrl(NEWS_PAGES.imageWidth, NEWS_PAGES.imageHeight);
+
+        pages[pageIndex].rows[rowIndex].articles[articleIndex] = article
+
+        this.setState({
+            pages: pages,
+        })
     }
 }
 

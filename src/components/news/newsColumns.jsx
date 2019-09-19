@@ -14,7 +14,7 @@ class NewsColumn extends Component {
             <div className="col">
                 {this.state.articles.map(article =>
                     (<NewsArticle
-                        key={article.id}
+                        key={article.id.articleId}
                         imageUrl={article.imageUrl}
                         headline={article.headline}
                         paragraph={article.paragraph}
@@ -25,7 +25,7 @@ class NewsColumn extends Component {
     }
 
     newImageUrl = (id) => {
-        let article = this.state.articles.filter((a) => a.id === id)[0];
+        let article = this.state.articles.filter((a) => a.id.articleId === id.articleId)[0];
         const url = this.articleService.getImageUrl(article.imageWidth, article.imageHeight);
         article.imageUrl = url;
         const articles = [...this.state.articles];
@@ -45,7 +45,9 @@ class NewsColumn extends Component {
                 imageHeight: NEWS_COLUMN.singleIimageHeight,
                 headline: this.articleService.getWords(NEWS_COLUMN.numberOfWords),
                 paragraph: this.articleService.getSentences(NEWS_COLUMN.numberOfWords),
-                id: 1
+                id: {
+                    articleId: 1
+                }
             });
         }
         else {
@@ -55,7 +57,9 @@ class NewsColumn extends Component {
                 imageHeight: NEWS_COLUMN.doubleIimageHeight,
                 headline: this.articleService.getWords(NEWS_COLUMN.numberOfWords),
                 paragraph: this.articleService.getSentences(NEWS_COLUMN.numberOfWords),
-                id: 1
+                id: {
+                    articleId: 1
+                }
             });
             articles.push({
                 imageUrl: this.articleService.getImageUrl(NEWS_COLUMN.doubleImageWidth, NEWS_COLUMN.doubleIimageHeight),
@@ -63,7 +67,9 @@ class NewsColumn extends Component {
                 imageHeight: NEWS_COLUMN.doubleIimageHeight,
                 headline: this.articleService.getWords(NEWS_COLUMN.numberOfWords),
                 paragraph: this.articleService.getSentences(NEWS_COLUMN.numberOfWords),
-                id: 2
+                id: {
+                    articleId: 2
+                }
             });
         }
         return articles

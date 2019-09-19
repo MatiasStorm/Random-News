@@ -6,7 +6,7 @@ class NavBar extends Component {
     render() {
         return (
             <nav className="fixed-top py-0 bg-primary nav">
-                <a className="p-3 navbar-brand font-weight-bolder" href="#">RandomNews</a>
+                <a className="p-3 navbar-brand font-weight-bolder" href="#home">RandomNews</a>
                 <a className="py-3 nav-link font-weight-bold" href="#home">Home</a>
                 <a className="py-3 nav-link font-weight-bold" href="#breaking-news">Breaking News</a>
                 <a className="py-3 nav-link font-weight-bold" href="#most-popular">Most Popular</a>

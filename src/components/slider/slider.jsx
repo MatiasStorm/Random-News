@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import Slide from './slide.jsx';
-import ImageUrlGenerator from '../../utilities/imageUrlGenerator.js';
 import SliderArrows from "./sliderArrows.jsx";
 import SliderIndicators from './sliderIndicators.jsx';
-import { LoremIpsum } from "lorem-ipsum";
 
 class Slider extends Component {
 

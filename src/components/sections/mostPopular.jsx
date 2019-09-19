@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NewsRow from '../news/newsRow';
 import Headline from '../headline';
 import TextGenerator from '../../utilities/textGenerator';
 import NewsRowSlider from '../news/newsRowSlider';

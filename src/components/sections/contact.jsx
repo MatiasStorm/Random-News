@@ -6,6 +6,7 @@ class Contact extends Component {
     render() {
         return (
             <div id="about" className="p-10 bg-dark text-white">
+                <Headline title="Contact" />
                 <h1>akldfjalkefj  dfas fwef aefa ewfawe fewaakldfjalkefj  dfas fwef aefa ewfa
                     we fewaakldfjalkefj  dfas fwef aefa ewfawe fewaakldfjalkefj  dfas fwef
                     aefa ewfawe fewa</h1>

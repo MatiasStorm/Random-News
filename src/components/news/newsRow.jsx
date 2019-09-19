@@ -7,7 +7,7 @@ class NewsRow extends Component {
             <div className="article-row-container row" style={this.style}>
                 {this.props.articles.map(article =>
                     <NewsArticle
-                        key={article.id}
+                        key={article.id.articleId}
                         headline={article.headline}
                         paragraph={article.paragraph}
                         imageUrl={article.imageUrl}

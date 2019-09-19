@@ -3,7 +3,6 @@ import SliderArrows from '../sections/sliderArrow2';
 import { NEWS_ROW_SLIDER } from "../../settings.js";
 import ArticleService from '../../services/articleService';
 import { LoremIpsum } from 'lorem-ipsum';
-import NewsArticle from './newsArticle';
 import NewsRow from './newsRow';
 
 class NewsRowSlider extends Component {
@@ -45,7 +44,7 @@ class NewsRowSlider extends Component {
     }
 
     newImageUrl = (id) => {
-        let article = this.state.articles.filter((a) => a.id === id)[0];
+        let article = this.state.articles.filter((a) => a.id.articleId === id.articleId)[0];
         const url = this.articleService.getImageUrl(article.imageWidth, article.imageHeight);
         article.imageUrl = url;
         const articles = [...this.state.articles];
@@ -101,7 +100,9 @@ class NewsRowSlider extends Component {
                 imageHeight: NEWS_ROW_SLIDER.imageHeight,
                 headline: this.articleService.getWords(NEWS_ROW_SLIDER.numberOfWords),
                 paragraph: this.articleService.getSentences(NEWS_ROW_SLIDER.numberOfSentences),
-                id: i
+                id: {
+                    articleId: i
+                }
             })
         }
         return articles;

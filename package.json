@@ -2,7 +2,7 @@
   "name": "random-news",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://matiasstorm.github.io/Random-News",
+  "homepage": "https://MatiasStorm.github.io/Random-News",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
