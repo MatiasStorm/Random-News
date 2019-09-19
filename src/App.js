@@ -10,12 +10,12 @@ import Contact from './components/sections/contact';
 function App() {
   return (
     <React.Fragment>
-      <NavBar></NavBar>
-      <Slider></Slider>
-      <BreakingNews></BreakingNews>
-      <MostPopular></MostPopular>
-      <AllNews></AllNews>
-      <Contact></Contact>
+      <NavBar key={1}></NavBar>
+      <Slider key={2}></Slider>
+      <BreakingNews key={3}></BreakingNews>
+      <MostPopular key={4}></MostPopular>
+      <AllNews key={5}></AllNews>
+      <Contact key={6}></Contact>
     </React.Fragment>
   );
 }

@@ -1,8 +1,6 @@
+import { IMAGE_URL_GENERATOR } from "../settings";
 
 class ImageUrlGenerator {
-    maxImageId = 300
-    url = "https://picsum.photos/id/"
-
     getUrls(n, width, height) {
         let urls = []
         for (let i = 0; i < n; i++) {
@@ -13,12 +11,8 @@ class ImageUrlGenerator {
     }
 
     getUrl = (width, height) => {
-        let id = this.randomInt(this.maxImageId);
-        return this.url + id + "/" + width + "/" + height;
-    }
-
-    setMaxImageId(value) {
-        this.maxImageId = value;
+        let id = this.randomInt(IMAGE_URL_GENERATOR.maxImageId);
+        return IMAGE_URL_GENERATOR.imageUrl + id + "/" + width + "/" + height;
     }
 
     randomInt(max) {

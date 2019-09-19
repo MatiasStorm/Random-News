@@ -59,7 +59,6 @@ html{
 
 .left-arrow, .right-arrow{
     position: absolute;
-    border: 1px solid green;
     height: 100%;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
@@ -69,7 +68,7 @@ html{
 }
 
 .left-arrow {
-    left: -3%;
+    left: -4%;
 }
 
 .right-arrow {
@@ -81,7 +80,14 @@ html{
 /* News */
 .news-article{
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        opacity: 0.8;
+    }
 }
+
+/* Most Popular */
+
 
 /* Sections */
 .border-bottom-4{

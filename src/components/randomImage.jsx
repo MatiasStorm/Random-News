@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ImageUrlGenerator from '../utilities/imageUrlGenerator';
 
 class RandomImage extends Component {
-    imgurl = new ImageUrlGenerator;
+    imgurl = new ImageUrlGenerator();
     state = {
         imageUrl: this.imgurl.getUrl(this.props.width, this.props.height)
     }

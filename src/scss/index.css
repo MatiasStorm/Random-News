@@ -52,7 +52,6 @@ html {
 
 .left-arrow, .right-arrow {
   position: absolute;
-  border: 1px solid green;
   height: 100%;
   cursor: pointer;
   -webkit-transition: all 0.1s ease-in-out;
@@ -64,7 +63,7 @@ html {
 }
 
 .left-arrow {
-  left: -3%;
+  left: -4%;
 }
 
 .right-arrow {
@@ -74,8 +73,15 @@ html {
 /* News */
 .news-article {
   cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
+.news-article:hover {
+  opacity: 0.8;
+}
+
+/* Most Popular */
 /* Sections */
 .border-bottom-4 {
   border-bottom: 4px solid #dee2e6;

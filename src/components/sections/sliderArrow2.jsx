@@ -9,12 +9,12 @@ class SliderArrows extends Component {
     render() {
         return (
             <React.Fragment>
-                <div>
+                <span>
                     <FontAwesomeIcon onClick={this.props.onLeftArrowClick} className="left-arrow" style={{ width: "3%" }} icon={faAngleDoubleLeft}></FontAwesomeIcon>
-                </div>
-                <div>
+                </span>
+                <span>
                     <FontAwesomeIcon onClick={this.props.onRightArrowClick} className="right-arrow" style={{ width: "3%" }} icon={faAngleDoubleRight}></FontAwesomeIcon>
-                </div>
+                </span>
             </React.Fragment>
         );
     }
