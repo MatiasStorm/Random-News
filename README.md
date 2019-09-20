@@ -1,5 +1,5 @@
 # Random News
-A news template webstite which displays random news on every reload. The webpage is made using React.
+A webstite which displays random news on every reload. The site is made with React and styled with bootstrap.
 
 Is hosted at: https://matiasstorm.github.io/Random-News/
 
