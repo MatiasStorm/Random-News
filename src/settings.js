@@ -36,3 +36,5 @@ export const IMAGE_URL_GENERATOR = {
     imageUrl: "https://picsum.photos/id/"
 }
 
+// 
+export const PHONE_WIDTH = 500;

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import { PHONE_WIDTH } from '../../settings';
 
 class PageNavigation extends Component {
-    state = {}
+    state = {
+        staticClasses: "btn btn-primary",
+    }
     render() {
         const pageNumbers = this.getPageNumbers();
         return (
             <div className="btn-group text-center mb-5 mt-1">
-                <button onClick={this.props.previosPage} className="mx-2 btn btn-primary">{"<<"}</button>
-
+                <button onClick={this.props.previosPage} className={this.state.staticClasses + this.getDynamicClasses()}>{"<<"}</button>
                 {this.displayLeftDotButton()}
 
                 {pageNumbers.map(number =>
@@ -19,11 +21,21 @@ class PageNavigation extends Component {
                     </button>
                 )}
 
-                <button className="mx-2 btn btn-primary btn-disabled" disabled>{"..."}</button>
-
-                <button onClick={this.props.nextPage} className="mx-2 btn btn-primary">{">>"}</button>
+                <button className={this.state.staticClasses + this.getDynamicClasses()} disabled>{"..."}</button>
+                <button onClick={this.props.nextPage} className={this.state.staticClasses + this.getDynamicClasses()}>{">>"}</button>
             </div>
         );
+    }
+
+    // componentDidMount() {
+    //     window.addEventListener("resize")
+    // }
+
+    getDynamicClasses() {
+        if (window.screen.width > PHONE_WIDTH) {
+            return " mx-2";
+        }
+        return "";
     }
 
     getPageNumbers() {
@@ -40,7 +52,7 @@ class PageNavigation extends Component {
     }
 
     getClassNames(buttonNumber) {
-        let classNames = "mx-2 btn btn-primary"
+        let classNames = this.state.staticClasses + this.getDynamicClasses();
         if (buttonNumber - 1 === this.props.currentPage) {
             classNames += " active";
         }
@@ -50,7 +62,7 @@ class PageNavigation extends Component {
     displayLeftDotButton() {
         if (this.props.currentPage > 2) {
             return (
-                <button className="mx-2 btn btn-primary btn-disabled" disabled>{"..."}</button>
+                <button className={this.state.staticClasses + this.getDynamicClasses()} disabled>{"..."}</button>
             );
         }
     }

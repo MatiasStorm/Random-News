@@ -1,5 +1,3 @@
-/* General Variables */
-/* General */
 h1, h2, h3 {
   text-transform: capitalize;
 }
@@ -8,7 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Top navigation bar */
+img {
+  max-width: 70vw;
+  max-height: 100vh;
+}
+
 .nav-link {
   color: white;
 }
@@ -35,8 +37,6 @@ html {
           transform: translateY(-100%);
 }
 
-/* =================================================== */
-/* Carousel */
 .carousel-control-prev, .carousel-control-next {
   cursor: pointer;
 }
@@ -61,12 +61,10 @@ html {
 }
 
 .left-arrow, .right-arrow {
-  position: absolute;
-  height: 100%;
+  z-index: 1000;
   cursor: pointer;
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
-  z-index: 1000;
 }
 
 .left-arrow:hover, .right-arrow:hover {
@@ -74,14 +72,13 @@ html {
 }
 
 .left-arrow {
-  left: -4%;
+  left: -6%;
 }
 
 .right-arrow {
   left: 100%;
 }
 
-/* News */
 .news-article {
   cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;

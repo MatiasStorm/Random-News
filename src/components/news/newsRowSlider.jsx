@@ -25,8 +25,8 @@ class NewsRowSlider extends Component {
     render() {
         return (
             <div className="position-relative container col">
-                <SliderArrows onLeftArrowClick={this.showPreviousArticle} onRightArrowClick={this.showNextArticle} />
 
+                <SliderArrows onLeftArrowClick={this.showPreviousArticle} onRightArrowClick={this.showNextArticle} />
                 <div className="article-row-container row" style={this.style}>
                     <NewsRow imageError={this.newImageUrl} articles={this.state.visibleArticles} />
                     {this.loadAllArticles()}

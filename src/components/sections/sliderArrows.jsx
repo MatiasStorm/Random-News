@@ -6,16 +6,23 @@ import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons/faAngleDou
 
 class SliderArrows extends Component {
     state = {}
+    style = {
+        width: "3%" // Width has to bee defined here
+    }
     render() {
         return (
-            <React.Fragment>
-                <span>
-                    <FontAwesomeIcon onClick={this.props.onLeftArrowClick} className="left-arrow" style={{ width: "3%" }} icon={faAngleDoubleLeft}></FontAwesomeIcon>
-                </span>
-                <span>
-                    <FontAwesomeIcon onClick={this.props.onRightArrowClick} className="right-arrow" style={{ width: "3%" }} icon={faAngleDoubleRight}></FontAwesomeIcon>
-                </span>
-            </React.Fragment>
+            <div className="">
+                <FontAwesomeIcon
+                    onClick={this.props.onLeftArrowClick}
+                    className="left-arrow position-absolute zindex-fixed h-100"
+                    style={this.style}
+                    icon={faAngleDoubleLeft}></FontAwesomeIcon>
+                <FontAwesomeIcon
+                    onClick={this.props.onRightArrowClick}
+                    className="right-arrow position-absolute h-100"
+                    style={this.style}
+                    icon={faAngleDoubleRight}></FontAwesomeIcon>
+            </div>
         );
     }
 }
