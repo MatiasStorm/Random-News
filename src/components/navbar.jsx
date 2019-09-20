@@ -3,6 +3,18 @@ import React, { Component } from 'react';
 
 class NavBar extends Component {
     state = {}
+
+    // componentDidMount() {
+    //     window.addEventListener("scroll", this.toggleNavBar);
+    // }
+
+    // toggleNavBar() {
+    //     console.log("scroll")
+    //     const navBar = document.querySelector(".nav");
+    //     console.log(navBar)
+    //     navBar.style.transform = "translateY(-100%)";
+    // }
+
     render() {
         return (
             <nav className="fixed-top py-0 bg-primary nav">

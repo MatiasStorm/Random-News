@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SliderArrows from '../sections/sliderArrow2';
+import SliderArrows from '../sections/sliderArrows';
 import { NEWS_ROW_SLIDER } from "../../settings.js";
 import ArticleService from '../../services/articleService';
 import { LoremIpsum } from 'lorem-ipsum';

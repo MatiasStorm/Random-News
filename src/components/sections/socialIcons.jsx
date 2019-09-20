@@ -7,7 +7,6 @@ class SocialIcons extends Component {
     render() {
         return (
             <div className="p-2">
-                <i class="fab fa-facebook"></i>
                 <span className="pr-2">
                     <SocialIcon url="http://twitter.com" />
                 </span>

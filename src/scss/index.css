@@ -25,6 +25,11 @@ html {
   color: #c7a40b;
 }
 
+.nav {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
 /* =================================================== */
 /* Carousel */
 .carousel-control-prev, .carousel-control-next {
@@ -84,8 +89,6 @@ html {
           transform: scale(1.03);
 }
 
-/* Most Popular */
-/* Sections */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
