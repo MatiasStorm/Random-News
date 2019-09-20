@@ -14,7 +14,7 @@ class NewsPages extends Component {
     render() {
         const { pages, currentIndex } = this.state;
         return (
-            <div>
+            <div className="">
                 <NewsPage page={pages[currentIndex]} imageError={this.newImageUrl} />
                 <PageNavigation currentPage={currentIndex} nextPage={this.nextPage} previosPage={this.previosPage} goToPage={this.goToPage} />
             </div>

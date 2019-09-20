@@ -1,0 +1,21 @@
+.nav-link {
+    color:white;
+    &:hover{
+        background-color: $secondary;
+    }
+}
+
+.navbar-brand{
+    color: white;
+    &:hover{
+        color:$secondary;
+    }
+}
+
+.nav{
+    transition: all 0.3s ease-out;
+}
+
+.nav-hidden{
+    transform: translateY(-100%);
+} 

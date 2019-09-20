@@ -1,34 +1,20 @@
 // Override default variables before the import
-@import "./custom";
- 
+@import "customStyles/custom";
 
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
-
 @import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/utilities";
 
-.border-3{
-    border-width: 3px !important;
-}
-
-.border-5{
-    border-width: 5px !important;
-}
-
+@import "/customStyles/borders";
 
 @import "../../node_modules/bootstrap/scss/nav";
 @import "../../node_modules/bootstrap/scss/navbar";
-
-
 @import "../../node_modules/bootstrap/scss/carousel";
-
 @import "../../node_modules/bootstrap/scss/media";
-
 @import "../../node_modules/bootstrap/scss/grid";
-
 @import "../../node_modules/bootstrap/scss/type";
 @import "../../node_modules/bootstrap/scss/buttons";
 
