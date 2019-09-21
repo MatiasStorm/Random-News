@@ -2,18 +2,50 @@ import React, { Component } from 'react';
 import Slide from './slide.jsx';
 import SliderArrows from "./sliderArrows.jsx";
 import SliderIndicators from './sliderIndicators.jsx';
+import { SLIDER } from '../../settings.js';
 
 class Slider extends Component {
-
-    // imgUrlGenerator = new ImageUrlGenerator;
-
     numberOfSlides = 5
     state = {
         imageWidth: 2000,
         imageHeight: 1000,
-        // imageUrls: this.imgUrlGenerator.getUrls(this.numberOfSlides, this.width, this.height),
         currentIndex: 0,
         translateValue: 0
+    }
+
+    render() {
+        return (
+            <React.Fragment>
+                <div id="home" className="overflow-hidden h-100">
+
+                    <SliderArrows
+                        prevSlide={this.goToPrevSlide}
+                        nextSlide={this.goToNextSlide}
+                    />
+
+                    <div className="slide-container" style={{
+                        transform: `translateX(${this.state.translateValue}px)`
+                    }}>
+                        {[...Array(SLIDER.numberOfSlides)].map((e, index) =>
+                            <Slide
+                                key={index}
+                                imageHeight={SLIDER.imageHeight}
+                                imageWidth={SLIDER.imageWidth}
+                            />
+                        )}
+                    </div>
+
+                    <SliderIndicators
+                        numberOfSlides={SLIDER.numberOfSlides}
+                        activeSlideIndex={this.state.currentIndex}
+                    />
+
+
+
+
+                </div>
+            </React.Fragment>
+        );
     }
 
     goToPrevSlide = () => {
@@ -58,38 +90,7 @@ class Slider extends Component {
         this.render();
     }
 
-    render() {
-        return (
-            <React.Fragment>
-                <div id="home" className="overflow-hidden">
 
-                    <div className="slide-container" style={{
-                        transform: `translateX(${this.state.translateValue}px)`
-                    }}>
-                        {[...Array(this.numberOfSlides)].map((e, index) =>
-                            <Slide
-                                key={index}
-                                imageHeight={this.state.imageHeight}
-                                imageWidth={this.state.imageWidth}
-                            />
-                        )}
-                    </div>
-
-                    <SliderIndicators
-                        numberOfSlides={this.numberOfSlides}
-                        activeSlideIndex={this.state.currentIndex}
-                    />
-
-
-                    <SliderArrows
-                        prevSlide={this.goToPrevSlide}
-                        nextSlide={this.goToNextSlide}
-                    />
-
-                </div>
-            </React.Fragment>
-        );
-    }
 }
 
 export default Slider;

@@ -3,21 +3,20 @@ import TextGenerator from '../../utilities/textGenerator';
 
 class AboutBox extends Component {
     state = {
-        classes: this.getClasses()
+        aboutText: TextGenerator.getSentences(10)
     }
-
     render() {
         return (
-            <div className={this.state.classes}>
+            <div className={this.getClasses()}>
                 <h2>What is RandomNews</h2>
-                <p className="text-left">{TextGenerator.getSentences(10)}</p>
+                <p className="text-left">{this.state.aboutText}</p>
             </div>
         );
     }
 
     getClasses() {
         let classes = "";
-        if (window.screen.width < this.props.phoneWidth) {
+        if (this.props.isPhone) {
             classes += "col"
         }
         else {
@@ -25,18 +24,6 @@ class AboutBox extends Component {
         }
         return classes;
     }
-
-    componentDidMount() {
-        window.addEventListener("resize", this.setClasses);
-    }
-
-    setClasses = () => {
-        this.setState({
-            classes: this.getClasses()
-        })
-    }
-
-
 }
 
 export default AboutBox;

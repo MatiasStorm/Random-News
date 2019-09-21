@@ -4,6 +4,7 @@ import { PHONE_WIDTH } from '../../settings';
 class PageNavigation extends Component {
     state = {
         staticClasses: "btn btn-primary",
+        isPhone: false,
     }
     render() {
         const pageNumbers = this.getPageNumbers();
@@ -27,12 +28,8 @@ class PageNavigation extends Component {
         );
     }
 
-    // componentDidMount() {
-    //     window.addEventListener("resize")
-    // }
-
     getDynamicClasses() {
-        if (window.screen.width > PHONE_WIDTH) {
+        if (!this.props.isPhone) {
             return " mx-2";
         }
         return "";

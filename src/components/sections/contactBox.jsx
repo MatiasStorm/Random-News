@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import SocialIcons from './socialIcons';
 
 class ContactBox extends Component {
-    state = {
-        classes: this.getClasses()
-    }
     render() {
         return (
-            <div className={this.state.classes}>
+            <div className={this.getClasses()}>
                 <h2>Contact</h2>
                 <p>RandomNews.com <br />
                     Random News Service Ltd. <br />
@@ -21,13 +18,10 @@ class ContactBox extends Component {
             </div>);
     }
 
-    componentDidMount() {
-        window.addEventListener("resize", this.setClasses);
-    }
 
     getClasses() {
         let classes = "";
-        if (window.screen.width < this.props.phoneWidth) {
+        if (this.props.isPhone) {
             classes += "col"
         }
         else {
@@ -35,13 +29,6 @@ class ContactBox extends Component {
         }
         return classes;
     }
-
-    setClasses = () => {
-        this.setState({
-            classes: this.getClasses()
-        })
-    }
-
 }
 
 export default ContactBox;

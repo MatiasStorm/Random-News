@@ -10,7 +10,7 @@ class Slide extends Component {
 
     render() {
         return (
-            <span className="slide d-inline-block position-relative" style={this.style}>
+            <span className="slide d-inline-block position-relative h-100" style={this.style}>
                 <RandomImage
                     height={this.props.imageHeight}
                     width={this.props.imageWidth}

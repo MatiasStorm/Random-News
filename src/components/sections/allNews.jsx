@@ -8,7 +8,7 @@ class AllNews extends Component {
         return (
             <div id="all-news">
                 <Headline title="All News"></Headline>
-                <NewsPages></NewsPages>
+                <NewsPages isPhone={this.props.isPhone}></NewsPages>
             </div>
         );
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SliderArrows from '../sections/sliderArrows';
-import { NEWS_ROW_SLIDER } from "../../settings.js";
+import { NEWS_ROW_SLIDER, PHONE_WIDTH } from "../../settings.js";
 import ArticleService from '../../services/articleService';
 import { LoremIpsum } from 'lorem-ipsum';
 import NewsRow from './newsRow';
@@ -15,10 +15,9 @@ class NewsRowSlider extends Component {
     }
 
     componentDidMount() {
-        const visibleArticles = this.getVisibleArticles(0);
         this.setState({
-            visibleArticles: visibleArticles,
             firstLoad: false,
+            visibleArticles: this.getVisibleArticles(0)
         })
     }
 
@@ -26,13 +25,21 @@ class NewsRowSlider extends Component {
         return (
             <div className="position-relative container col">
 
-                <SliderArrows onLeftArrowClick={this.showPreviousArticle} onRightArrowClick={this.showNextArticle} />
+                {this.renderSliderArrows()}
+
                 <div className="article-row-container row" style={this.style}>
                     <NewsRow imageError={this.newImageUrl} articles={this.state.visibleArticles} />
                     {this.loadAllArticles()}
                 </div>
             </div>
         );
+    }
+
+    renderSliderArrows() {
+        if (!this.props.isPhone) {
+            return (<SliderArrows onLeftArrowClick={this.showPreviousArticle} onRightArrowClick={this.showNextArticle} />);
+        }
+        return;
     }
 
     loadAllArticles = () => {

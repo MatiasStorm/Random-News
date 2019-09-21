@@ -16,7 +16,12 @@ class NewsPages extends Component {
         return (
             <div className="">
                 <NewsPage page={pages[currentIndex]} imageError={this.newImageUrl} />
-                <PageNavigation currentPage={currentIndex} nextPage={this.nextPage} previosPage={this.previosPage} goToPage={this.goToPage} />
+                <PageNavigation
+                    currentPage={currentIndex}
+                    nextPage={this.nextPage}
+                    previosPage={this.previosPage}
+                    goToPage={this.goToPage}
+                    isPhone={this.props.isPhone} />
             </div>
         );
     }

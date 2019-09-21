@@ -7,7 +7,7 @@ import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons/faAngleDou
 class SliderArrows extends Component {
     state = {}
     style = {
-        width: "3%" // Width has to bee defined here
+        width: "3%" // Width has to be defined here
     }
     render() {
         return (

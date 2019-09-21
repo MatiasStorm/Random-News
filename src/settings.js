@@ -36,5 +36,12 @@ export const IMAGE_URL_GENERATOR = {
     imageUrl: "https://picsum.photos/id/"
 }
 
+export const SLIDER = {
+    numberOfSlides: 5,
+    imageWidth: 2000,
+    imageHeight: 1000
+}
+
 // 
-export const PHONE_WIDTH = 500;
+export const PHONE_WIDTH = 715;
+export const MOST_POPULAR_TOPICS = 3;
